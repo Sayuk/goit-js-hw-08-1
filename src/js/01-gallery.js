@@ -11,7 +11,7 @@ imageContainer.insertAdjacentHTML("beforeend",imgMarkup );
 function createImgGallery(galleryItems){
     return galleryItems
     .map(({preview, original, description}) => {
-        return `<li class="gallery__item">
+        return `<li class="gallery__item listStyle = 'none'">
         <a class="gallery__item" href="${original}" data-lightbox="lbox" onclick="return false">
             <img 
             class="gallery__image"
