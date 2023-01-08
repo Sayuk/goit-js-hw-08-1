@@ -19,10 +19,14 @@ player.on('timeupdate', function (currentTime) {
   const seconds = currentTime.seconds;
         localStorage.setItem('videoplayer-current-time', JSON.stringify(seconds));
     });
-player.setCurrentTime(1000).then(function(seconds) {
+
+
+    const timeOn = JSON.parse(localStorage.getItem('videoplayer-current-time'))
+let timeMove = timeOn.seconds;
+player.setCurrentTime(timeMove).then(function(seconds) {
     // seconds = the actual time that the player seeked to
 }).catch(function(error) {
-    switch (error.player) {
+    switch (error.name) {
         case 'RangeError':
             // the time was less than 0 or greater than the video’s duration
             break;
