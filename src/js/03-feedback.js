@@ -1,28 +1,33 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import { galleryItems } from './gallery-items';
 
-import throttle from 'lodash.throttle';
+console.log(galleryItems);
 
-const form = document.querySelector('.feedback-form');
-form.addEventListener('input', throttle(onFormData, 500));
-form.addEventListener('submit', onSubmitForm);
+const gallery = document.querySelector('.gallery');
 
-const formData = {};
-const parsedObj = JSON.parse(obj);
+const markup = galleryItems
+  .map(
+    ({ preview, description, original }) => `<li>
+    <a class="gallery__item" href="${original}">
+      <img
+        class="gallery__image"
+        src="${preview}"
+        alt="${description}"
+      />
+    </a></li>`
+  )
+  .join('');
 
-function onFormData(e) {
-  formData[e.target.name] = e.target.value;
-  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
-}
+gallery.insertAdjacentHTML('beforeend', markup);
 
-function onSubmitForm(e) {
-  console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
-  e.preventDefault();
-  e.currentTarget.reset();
-  localStorage.removeItem('feedback-form-state');
-}
+const arrLinks = document.querySelectorAll('a');
+arrLinks.forEach(link => {
+  link.style.boxShadow = 'none';
+});
 
-function saveInput() {
-  if (obj) {
-    form.elements.email.value = parsedObj.email || '';
-    form.elements.message.value = parsedObj.message || '';
-  }
-}
+new SimpleLightbox('ul.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+  captionPosition: 'bottom',
+});

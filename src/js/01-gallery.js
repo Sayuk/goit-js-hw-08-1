@@ -38,4 +38,3 @@ arrLinks.forEach(link => {
   link.style.boxShadow = 'none';
 });
 
-console.log(galleryItems);
