@@ -11,6 +11,7 @@ const markup = galleryItems
     ({ preview, description, original }) => `<li>
     <a class="gallery__item" href="${original}">
       <img
+      onclick="return false"
         class="gallery__image"
         src="${preview}"
         alt="${description}"
