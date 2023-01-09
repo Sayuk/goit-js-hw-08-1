@@ -24,11 +24,11 @@ const markup = galleryItems
 
 gallery.insertAdjacentHTML('beforeend', markup);
 
-const arrLinks = document.querySelectorAll('a');
-arrLinks.forEach(link => {
-    link.style.boxShadow = 'none';
+// const arrLinks = document.querySelectorAll('a');
+// arrLinks.forEach(link => {
+//     link.style.boxShadow = 'none';
     
-});
+// });
 
 new SimpleLightbox('ul.gallery a', {
   captionsData: 'alt',
