@@ -9,7 +9,7 @@ const gallery = document.querySelector('.gallery');
 const markup = galleryItems
   .map(
     ({ preview, description, original }) => `<li>
-    <a class="gallery__item" href="${original}" onclick="return false">
+    <a class="gallery__item" href="${original}" onclick="event.preventDefault()">
       <img
       
         class="gallery__image"
@@ -17,14 +17,17 @@ const markup = galleryItems
         alt="${description}"
       />
     </a></li>`
-  )
+      
+)
+    
   .join('');
 
 gallery.insertAdjacentHTML('beforeend', markup);
 
 const arrLinks = document.querySelectorAll('a');
 arrLinks.forEach(link => {
-  link.style.boxShadow = 'none';
+    link.style.boxShadow = 'none';
+    
 });
 
 new SimpleLightbox('ul.gallery a', {
