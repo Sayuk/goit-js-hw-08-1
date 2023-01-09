@@ -1,6 +1,7 @@
-// Change code below this line
-import SimpleLightbox from 'simplelightbox';
-import "node_modules/simplelightbox/dist/simple-lightbox.min.css";
+// Описаний в документації
+import SimpleLightbox from "simplelightbox";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 // Add imports above this line
