@@ -15,7 +15,7 @@ imageContainer.insertAdjacentHTML("beforeend",imgMarkup );
 function createImgGallery(galleryItems){
     return galleryItems
     .map(({preview, original, description}) => {
-        return `<li class="gallery__item listStyle = 'none'>
+        return `<li class="gallery__item" listStyle = "none">
         <a class="gallery__item" href="${original}" data-lightbox="lbox" >
             <img 
             
@@ -38,7 +38,7 @@ arrLinks.forEach(link => {
 });
 
 
-var gallery = new SimpleLightbox('.gallery a',{captionsData: 'alt', captionDelay: 250, });
+new SimpleLightbox('.gallery a',{captionsData: 'alt', captionDelay: 250, });
 
  
 
