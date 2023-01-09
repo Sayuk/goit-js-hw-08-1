@@ -1,8 +1,10 @@
-// Add imports above this line
-import { galleryItems } from './gallery-items';
+
 // Change code below this line
 import SimpleLightbox from 'simplelightbox';
 import "simplelightbox/dist/simple-lightbox.min.css";
+// Add imports above this line
+import { galleryItems } from './gallery-items';
+console.log(galleryItems);
 
 const imageContainer = document.querySelector(".gallery");
 const imgMarkup = createImgGallery(galleryItems);
@@ -28,9 +30,12 @@ function createImgGallery(galleryItems){
 }
 
 
-var gallery = new SimpleLightbox('.gallery a',{captionsData: 'alt', captionDelay: 250, });
+var gallery = new SimpleLightbox('.gallery a', {captionsData: 'alt', captionDelay: 250, });
 
  
-
+const arrLinks = document.querySelectorAll('a');
+arrLinks.forEach(link => {
+  link.style.boxShadow = 'none';
+});
 
 console.log(galleryItems);
