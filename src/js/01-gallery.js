@@ -32,11 +32,6 @@ function createImgGallery(galleryItems){
     }).join("");
 }
 
-const arrLinks = document.querySelectorAll('a');
-arrLinks.forEach(link => {
-  link.style.boxShadow = 'none';
-});
-
 
 new SimpleLightbox('.gallery a',{captionsData: 'alt', captionDelay: 250, });
 
