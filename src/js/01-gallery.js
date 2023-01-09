@@ -9,9 +9,9 @@ const gallery = document.querySelector('.gallery');
 const markup = galleryItems
   .map(
     ({ preview, description, original }) => `<li>
-    <a class="gallery__item" href="${original}">
+    <a class="gallery__item" href="${original}" onclick="return false">
       <img
-      onclick="return false"
+      
         class="gallery__image"
         src="${preview}"
         alt="${description}"
