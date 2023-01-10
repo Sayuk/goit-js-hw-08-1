@@ -15,7 +15,7 @@ function onFormData(e) {
 
 function onSubmitForm(e) {
    e.preventDefault();
-  console.log(STORAGE);
+  console.log('Send');
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE);
   
