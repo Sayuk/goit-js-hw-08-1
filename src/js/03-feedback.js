@@ -13,10 +13,12 @@ function onFormData(e) {
 }
 
 function onSubmitForm(e) {
+   e.preventDefault();
   console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
-  e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem('feedback-form-state');
+    delete date.email;
+  delete date.message;
 }
 
 function dataFromLocalStorage() {
