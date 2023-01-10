@@ -14,10 +14,15 @@ function onFormData(e) {
 }
 
 function onSubmitForm(e) {
-   e.preventDefault();
-  console.log(JSON.parse(localStorage.getItem(STORAGE)));
-  e.currentTarget.reset();
+   const parsedData = JSON.parse(localStorage.getItem(STORAGE));
+  console.log(parsedData);
+
+  e.preventDefault();
   localStorage.removeItem(STORAGE);
+  e.currentTarget.reset();
+
+  delete date.email;
+  delete date.message;
   
 }
 
