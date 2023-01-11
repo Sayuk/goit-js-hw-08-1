@@ -10,14 +10,14 @@ const STORAGE = 'feedback-form-state';
 
 function onFormData(e) {
   data[e.target.name] = e.target.value;
-  // localStorage.setItem(STORAGE, JSON.stringify(data));
-    localStorage.setItem(STORAGE);
+  localStorage.setItem(STORAGE, JSON.stringify(data));
+
 }
 
 function onSubmitForm(e) {
    e.preventDefault();
   
-  e.currentTarget.reset();
+  // e.currentTarget.reset();
   localStorage.removeItem(STORAGE);
 // console.log(localStorage.getItem(STORAGE));
 }
