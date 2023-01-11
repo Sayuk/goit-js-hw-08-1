@@ -15,10 +15,10 @@ function onFormData(e) {
 
 function onSubmitForm(e) {
    e.preventDefault();
-  console.log('Send');
+  
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE);
-  
+console.log(localStorage.getItem(STORAGE));
 }
 
 function dataFromLocalStorage() {
