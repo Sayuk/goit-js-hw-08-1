@@ -5,12 +5,12 @@ const form = document.querySelector('.feedback-form');
 form.addEventListener('input', throttle(onFormData, 500));
 form.addEventListener('submit', onSubmitForm);
 
-const data = {};
+const date = {};
 const STORAGE = 'feedback-form-state';
 
 function onFormData(e) {
-  data[e.target.name] = e.target.value;
-  localStorage.setItem(STORAGE, JSON.stringify(data));
+  date[e.target.name] = e.target.value;
+  localStorage.setItem(STORAGE, JSON.stringify(date));
 
 }
 
@@ -18,19 +18,22 @@ function onSubmitForm(e) {
    e.preventDefault();
   
   e.currentTarget.reset();
-  localStorage.setItem(STORAGE);
+ 
   localStorage.removeItem(STORAGE);
 // console.log(localStorage.getItem(STORAGE));
+  delete date.email;
+  delete date.message;
+  
 }
 
 function dataFromLocalStorage() {
-  const data = JSON.parse(localStorage.getItem(STORAGE));
+  const date = JSON.parse(localStorage.getItem(STORAGE));
   const email = document.querySelector('.feedback-form input');
   const message = document.querySelector('.feedback-form textarea');
-  if (data) {
-    email.value = data.email;
+  if (date) {
+    email.value = date.email;
     
   }else {
-    message.value = data.message;
+    message.value = date.message;
   }
 };
