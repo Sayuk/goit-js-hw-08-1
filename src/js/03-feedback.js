@@ -54,6 +54,8 @@ function onSubmitForm(e) {
   e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem('feedback-form-state');
+  delete date.email;
+delete date.message;
 }
 
 (function dataFromLocalStorage() {
