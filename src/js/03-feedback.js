@@ -27,7 +27,7 @@ function onSubmitForm(e) {
   localStorage.removeItem(STORAGE);
 }
   
-}
+
 
 function dataFromLocalStorage() {
   const date = JSON.parse(localStorage.getItem(STORAGE));
