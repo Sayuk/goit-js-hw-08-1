@@ -9,8 +9,12 @@ const date = {};
 const STORAGE = 'feedback-form-state';
 
 function onFormData(e) {
-  date[e.target.name] = e.target.value;
-  localStorage.setItem(STORAGE, JSON.stringify(date));
+  // date[e.target.name] = e.target.value;
+  // localStorage.setItem(STORAGE, JSON.stringify(date));
+  let persistedFilters = localStorage.getItem(STORAGE);
+  persistedFilters = persistedFilters ? JSON.parse(persistedFilters) : {};
+  persistedFilters[evt.target.name] = evt.target.value;
+  localStorage.setItem(STORAGE, JSON.stringify(persistedFilters));
 
 }
 
@@ -19,8 +23,8 @@ function onSubmitForm(e) {
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE);
   console.log(date)
-  // delete date.email;
-  // delete date.message;
+  delete date.email;
+  delete date.message;
   
 }
   
