@@ -25,7 +25,7 @@ function onSubmitForm(e) {
   const email = document.querySelector('.feedback-form input');
   const message = document.querySelector('.feedback-form textarea');
   if (data) {
-   email.value = date.email || '';
-    message.value = date.message || '';
+   email.value = date.email;
+    message.value = date.message;
   }
 })();
