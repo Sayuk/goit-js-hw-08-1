@@ -19,7 +19,7 @@ function onSubmitForm(e) {
    e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE);
-  console.log(date)
+  console.log(STORAGE)
   delete date.email;
   delete date.message;
   
