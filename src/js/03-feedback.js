@@ -18,6 +18,7 @@ function onSubmitForm(e) {
    e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE);
+  console.log(date)
   delete date.email;
   delete date.message;
   
@@ -28,9 +29,7 @@ function dataFromLocalStorage() {
   const email = document.querySelector('.feedback-form input');
   const message = document.querySelector('.feedback-form textarea');
   if (date) {
-    email.value = date.email;
-    
-  }else {
-    message.value = date.message;
+    email.value = date.email || '';
+    message.value = date.message || '';
   }
 };
