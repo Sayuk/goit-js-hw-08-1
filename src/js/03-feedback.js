@@ -13,7 +13,7 @@ function onFormData(e) {
   // localStorage.setItem(STORAGE, JSON.stringify(date));
   let persistedFilters = localStorage.getItem(STORAGE);
   persistedFilters = persistedFilters ? JSON.parse(persistedFilters) : {};
-  persistedFilters[evt.target.name] = evt.target.value;
+  persistedFilters[e.target.name] = e.target.value;
   localStorage.setItem(STORAGE, JSON.stringify(persistedFilters));
 
 }
