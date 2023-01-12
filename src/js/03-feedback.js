@@ -5,12 +5,12 @@ const form = document.querySelector('.feedback-form');
 form.addEventListener('input', throttle(onFormData, 500));
 form.addEventListener('submit', onSubmitForm);
 
-const date = {};
+const formData = {};
 const STORAGE = 'feedback-form-state';
 
 function onFormData(e) {
-  date[e.target.name] = e.target.value;
-  localStorage.setItem(STORAGE, JSON.stringify(date));
+  formData[e.target.name] = e.target.value;
+  localStorage.setItem(STORAGE, JSON.stringify(formData));
 
   
 }
@@ -32,8 +32,8 @@ function dataFromLocalStorage() {
   const email = document.querySelector('.feedback-form input');
   const message = document.querySelector('.feedback-form textarea');
   if (date) {
-    email.value = date.email;
-    message.value = date.message;
+    email.value = date.email || '';
+    message.value = date.message || ''; 
   }
 };
 // import throttle from 'lodash.throttle';
